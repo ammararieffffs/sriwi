@@ -369,6 +369,8 @@ a {
     font-weight: bold;
   }
 
+
+
   /* Fixed header with full width */
 .main-header-parent {
   position: fixed;
@@ -383,10 +385,14 @@ a {
   align-items: center;
 }
 
+.logo img {
+  width: 50px;
+}
+
 /* Burger menu styling */
 .burger-menu {
   display: block;
-  font-size: 24px;
+  font-size: 30px;
   background: none;
   border: none;
   cursor: pointer;
@@ -395,7 +401,7 @@ a {
 /* Dropdown menu hidden by default */
 .header-inner-div {
   position: fixed; /* Make this fixed so it stays on the viewport */
-  top:35px; /* Adjust based on header height */
+  top: 50px; /* Adjust based on header height */
   left: 0;
   width: 100%; /* Full width */
   max-height: 0; /* Hidden by default */
