@@ -512,6 +512,7 @@ a {
   .main-news-details {
     border-radius: 0 0 45px 45px;
     width: 89%;
+    padding-bottom: 45px;
   }
 
   #thrd-section {
