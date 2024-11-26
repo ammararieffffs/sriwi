@@ -139,7 +139,7 @@ a {
 }
 
 #first-section {
-  background: url(bg1.png);
+  background: var(--yellow);
   background-size: contain;
   background-position: center;
   display: flex;
@@ -217,7 +217,7 @@ a {
 
 #scnd-section {
   min-height: 100vh;
-  background: url(bg2.png);
+  background: var(--green);
   background-size: contain;
   background-position: center;
   padding-top: 5vw;
@@ -304,7 +304,7 @@ a {
 
 #thrd-section {
   height: 100vh;
-  background: url(bg3.png);
+  background: var(--yellow);
   padding-inline: var(--side-padding-inner);
   display: flex;
   justify-content: space-evenly;
@@ -375,7 +375,7 @@ a {
 .main-header-parent {
   position: fixed;
   padding-inline: 20px;
-  width: calc(100% - 9.483vw);
+  width: calc(100% - 6.483vw);
   top: 0; /* Stick to top of the page */
   left: 0; /* Full width */
   z-index: 1000; /* Ensure it's above other content */
