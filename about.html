@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tentang Kami</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="about.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -52,7 +52,159 @@
       <button class="burger-menu" onclick="toggleMenu()">☰</button>
     </div>
     <section id="frst-section">
-      
+      <h1 class="first-title">
+        TENTANG <span>SEKOLAH RENDAH ISLAM</span> <br /><span
+          style="color: var(--yellow)"
+          >WARDATUL IMTIYAAZ</span
+        >
+      </h1>
+      <div class="info-details">
+        <p>
+          Sekolah Rendah Islam Wardatul Imtiyaaz telah mula beroperasi pada
+          tahun 2020 sebagai sebuah institusi pendidikan yang berlandaskan
+          nilai-nilai Islam. Sekolah ini ditubuhkan dengan matlamat untuk
+          menyediakan pendidikan berkualiti kepada pelajar-pelajar, terutamanya
+          dalam bidang pengajian agama Islam.
+        </p>
+        <p>
+          Sebagai sebuah sekolah yang mementingkan pembangunan ilmu duniawi dan
+          ukhrawi, Sekolah Rendah Islam Wardatul Imtiyaaz menawarkan
+          matapelajaran agama yang dirancang dengan teliti menggunakan sukatan
+          pelajaran yang disediakan oleh Jabatan Agama Islam Selangor (JAIS) dan
+          Jabatan Kemajuan Islam Malaysia (JAKIM). Pendekatan ini memastikan
+          pelajar menerima pendidikan agama yang komprehensif, relevan, dan
+          sejajar dengan keperluan semasa serta tuntutan syariat.
+        </p>
+        <p>
+          Selain itu, sekolah ini juga berusaha untuk melahirkan generasi
+          pelajar yang bukan sahaja cemerlang dari segi akademik tetapi juga
+          berakhlak mulia dan memiliki nilai-nilai Islam yang kukuh. Dengan
+          tenaga pengajar yang berpengalaman serta persekitaran pembelajaran
+          yang kondusif, Sekolah Rendah Islam Wardatul Imtiyaaz terus komited
+          dalam membentuk insan yang seimbang dari segi jasmani, emosi, rohani,
+          dan intelektual.
+        </p>
+        <p>Pengambilan Murid Bermula Dari Darjah 1 Hingga Darjah 6.</p>
+        <p>
+          Pelajar-Pelajar Darjah 5 Akan Menduduki Peperiksaan Ujian Penilaian
+          Kelas Kafa ( Upkk ) Yang Dikelolakan Oleh Jakim Dan Pelajar Darjah 6
+          Akan Menduduki Peperiksaan Sijil Rendah Agama ( Psra ) Yang
+          Dikelolakan Oleh Jais.
+        </p>
+        <p>
+          Kedua-Dua Peperiksaan Ini Akan Menjadi Pra-Syarat Pengambilan Pelajar
+          Ke Sekolah Menengah Agama Di Bawah Jais.
+        </p>
+      </div>
     </section>
+    <section id="scnd-section">
+      <h1>KOMPONEN MATA PELAJARAN</h1>
+      <div class="subjects-details">
+        <div class="subjects-columns">
+          <h2 class="subjects-title">
+            TAHAP 1 
+            (DARJAH 1 - 3)
+          </h2>
+          <br />
+          <br />
+          <div class="subjects-parent">
+            <div class="subjects-info">
+              <div class="subject-boxes">
+                <p>Al-quran</p>
+              </div>
+              <div class="subject-boxes">
+                <p>Tauhid</p>
+              </div>
+            </div>
+            <div class="subjects-info">
+              <div class="subject-boxes">
+                <p>Feqah</p>
+              </div>
+              <div class="subject-boxes">
+                <p>Bahasa Arab</p>
+              </div>
+            </div>
+            <div class="subjects-info">
+              <div class="subject-boxes">
+                <p>Akhlak</p>
+              </div>
+              <div class="subject-boxes">
+                <p>Sirah</p>
+              </div>
+            </div>
+            <div class="subjects-info">
+              <div class="subject-boxes">
+                <p>Jawi</p>
+              </div>
+              <div class="subject-boxes">
+                <p>Imlak</p>
+              </div>
+            </div>
+            <div class="subjects-info last">
+              <div class="subject-boxes">
+                <p>Khat</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="subjects-columns">
+          <h2 class="subjects-title">
+            TAHAP 2 
+            (DARJAH 4 - 6)
+          </h2>
+          <br />
+          <br />
+          <div class="subjects-parent">
+            <div class="subjects-info">
+              <div class="subject-boxes">
+                <p>Al-quran</p>
+              </div>
+              <div class="subject-boxes">
+                <p>Tauhid</p>
+              </div>
+            </div>
+            <div class="subjects-info">
+              <div class="subject-boxes">
+                <p>Feqah</p>
+              </div>
+              <div class="subject-boxes">
+                <p>Bahasa Arab</p>
+              </div>
+            </div>
+            <div class="subjects-info">
+              <div class="subject-boxes">
+                <p>Akhlak</p>
+              </div>
+              <div class="subject-boxes">
+                <p>Sirah</p>
+              </div>
+            </div>
+            <div class="subjects-info">
+              <div class="subject-boxes">
+                <p>Jawi</p>
+              </div>
+              <div class="subject-boxes">
+                <p>Imlak</p>
+              </div>
+            </div>
+            <div class="subjects-info">
+              <div class="subject-boxes">
+                <p>Khat</p>
+              </div>
+              <div class="subject-boxes">
+                <p>Tajwid</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function toggleMenu() {
+        const headerInnerDiv = document.querySelector(".header-inner-div");
+        headerInnerDiv.classList.toggle("active");
+      }
+    </script>
   </body>
 </html>
