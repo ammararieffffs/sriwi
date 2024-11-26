@@ -1,6 +1,131 @@
 :root {
-    --white: white;
-    --green: #a9d671;
-    --yellow: #ffde59;
-    --side-padding-inner: 5.2083vw;
+  --white: white;
+  --green: #a9d671;
+  --yellow: #ffde59;
+  --side-padding-inner: 5.2083vw;
+}
+
+#frst-section {
+  padding-inline: var(--side-padding-inner);
+  background: var(--green);
+  padding-block: calc((var(--side-padding-inner)) + 2vw);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5vw;
+}
+
+.info-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  text-align: justify;
+  padding-inline: calc((var(--side-padding-inner)) * 2);
+}
+
+#scnd-section {
+  background: var(--yellow);
+  padding-block: 5vw;
+}
+
+.subjects-title::after {
+    content: "";
+    margin-top: 0.2vw;
+    display: block;
+    width: 20vw;
+    height: 0.2vw;
+    background-color: var(--green);
+    animation: lineSlide5 4s infinite;
+}
+
+@keyframes lineSlide5 {
+  0% {
+    width: 0;
+    transform: translateX(0);
   }
+  50% {
+    width: 20vw;
+    transform: translateX(0);
+  }
+  100% {
+    width: 0;
+    transform: translateX(20vw); /* Slide the start point to end */
+  }
+}
+
+.subjects-details {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.subjects-columns {
+  width: 40vw;
+  
+}
+
+.subjects-parent {
+  display: flex;
+  flex-direction: column;
+}
+
+.subjects-info {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 3vw;
+}
+
+.subject-boxes {
+  width: 8vw;
+  background: var(--green);
+  border-radius: 25px;
+  padding-inline: var(--side-padding-inner);
+  padding-block: 2vw;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0vw 0.52vw 0.52vw 0.026vw rgba(0, 0, 0, 0.21);
+  -webkit-box-shadow: -0.16vw 0.52vw 0.94vw 0.026vw rgba(0, 0, 0, 0.21);
+  -moz-box-shadow: -0.16vw 0.52vw 0.94vw 0.026vw rgba(0, 0, 0, 0.21);
+}
+
+.last {
+  display: flex;
+  justify-content: center !important;
+}
+
+@media (max-width: 767px) {
+  #frst-section {
+    margin-top: 50px;
+  }
+
+  .info-details {
+    gap: 30px;
+  }
+
+  .subjects-title {
+    
+  }
+
+  .subjects-parent {
+    gap: 20px;
+  }
+
+  .subjects-details {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .subjects-columns {
+    width: 100%;
+  }
+
+  .subjects-info {
+    justify-content: space-around;
+  }
+
+  .subject-boxes {
+    padding-block: 30px;
+    padding-inline: 20px;
+    width: 100px;
+  }
+}
