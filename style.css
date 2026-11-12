@@ -1612,63 +1612,8 @@ a.wa-float.is-visible:hover {
 }
 
 /* ============================================================
-     7. REDUCED MOTION + PHONES
+     6m. HERO ANIMATION
      ============================================================ */
-
-@media (prefers-reduced-motion: reduce) {
-  .photo-strip {
-    overflow-x: auto;
-  }
-  .photo-track {
-    padding-inline: 1.042vw;
-  }
-  .branch-pin::after,
-  .wa-float::after {
-    animation: none;
-    opacity: 0;
-  }
-}
-
-@media (max-width: 860px) {
-  .why-inner,
-  .services-grid,
-  .branches-grid {
-    grid-template-columns: 1fr;
-  }
-  .why-photo {
-    order: -1;
-    max-width: 80vw;
-  }
-  .why-blob {
-    aspect-ratio: 1 / 1;
-  }
-
-  .steps-line {
-    display: none;
-  }
-  .steps {
-    grid-template-columns: 1fr 1fr;
-    row-gap: 5vw;
-  }
-
-  .fees-head {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .gallery-grid {
-    columns: 2;
-  }
-}
-
-@media (max-width: 520px) {
-  .steps {
-    grid-template-columns: 1fr;
-  }
-}
-/* ============================================================
-   HERO ANIMATION
-   ============================================================ */
 
 /* each title line hides its text until it slides up */
 .hero-line {
@@ -1687,9 +1632,10 @@ a.wa-float.is-visible:hover {
 .hero-loading .photo-strip {
   visibility: hidden;
 }
+
 /* ============================================================
-   SMOOTH SCROLLING (Lenis)
-   ============================================================ */
+     6n. SMOOTH SCROLLING (Lenis)
+     ============================================================ */
 
 html.lenis,
 html.lenis body {
@@ -1703,4 +1649,1311 @@ html.lenis body {
 }
 .lenis.lenis-stopped {
   overflow: hidden;
+}
+
+/* ============================================================
+     6o. MENU BUTTON (only shown on tablets and phones)
+     ============================================================ */
+
+.nav-toggle {
+  display: none;
+}
+
+/* ============================================================
+     7. REDUCED MOTION
+     ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-strip {
+    overflow-x: auto;
+  }
+  .photo-track {
+    padding-inline: 1.042vw;
+  }
+  .branch-pin::after,
+  .wa-float::after {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* ============================================================
+     8. TABLETS (1024px and narrower)
+     Sizes here are worked out on an 834px-wide tablet:
+     1px = 0.12vw
+     ============================================================ */
+
+@media (max-width: 1024px) {
+  /* ---------- variables ---------- */
+  :root {
+    --side-padding: 4.8vw; /* 40px */
+    --section-padding: 9.6vw; /* 80px */
+    --content-width: 100%;
+
+    --h1-size: 7.2vw; /* 60px */
+    --h2-size: 4.8vw; /* 40px */
+    --h3-size: 3.36vw; /* 28px */
+    --h4-size: 2.88vw; /* 24px */
+    --h5-size: 2.16vw; /* 18px */
+    --h6-size: 1.92vw; /* 16px */
+    --p-size: 2.04vw; /* 17px */
+    --closing-title-size: 9.6vw; /* 80px */
+
+    --bar-gap: 0.6vw;
+    --bar-height: 0.24vw;
+  }
+
+  /* ---------- base ---------- */
+  a {
+    padding: 1.2vw 2.16vw;
+    border-radius: 4.8vw;
+  }
+  a:focus-visible,
+  button:focus-visible,
+  [tabindex]:focus-visible {
+    outline-width: 0.36vw;
+    outline-offset: 0.36vw;
+  }
+
+  /* ---------- shared section parts ---------- */
+  .why-eyebrow,
+  .steps-eyebrow,
+  .fees-eyebrow,
+  .gallery-eyebrow,
+  .services-eyebrow,
+  .branches-eyebrow {
+    margin-bottom: 1.44vw;
+    font-size: 1.56vw;
+    letter-spacing: 0.18vw;
+  }
+  .steps-lede,
+  .fees-lede,
+  .gallery-lede,
+  .services-lede,
+  .branches-lede {
+    margin-top: 1.44vw;
+    max-width: 70vw;
+    font-size: 1.92vw;
+  }
+  .steps-section h2,
+  .services h2 {
+    max-width: none;
+  }
+  .wave {
+    height: 6vw;
+  }
+
+  /* ---------- navigation: menu button + dropdown ---------- */
+  .nav {
+    top: 0.96vw;
+    padding: 0.96vw 1.2vw 0.96vw 2.4vw;
+    border-radius: 4.8vw;
+  }
+  .nav-logo {
+    gap: 1.2vw;
+  }
+  .nav-logo img {
+    height: 5.28vw;
+  }
+  .nav-logo-text h3 {
+    font-size: 2.64vw;
+  }
+  .nav-logo-text p {
+    font-size: 1.44vw;
+    line-height: 1.3;
+  }
+
+  .nav-toggle {
+    display: grid;
+    place-content: center;
+    gap: var(--bar-gap);
+    width: 5.28vw;
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 50%;
+    background: var(--hover-background);
+    cursor: pointer;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 2.4vw;
+    height: var(--bar-height);
+    border-radius: var(--bar-height);
+    background: var(--text-on-dark);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  /* three bars turn into an X */
+  .nav-open .nav-toggle span:nth-child(1) {
+    transform: translateY(calc(var(--bar-gap) + var(--bar-height)))
+      rotate(45deg);
+  }
+  .nav-open .nav-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-open .nav-toggle span:nth-child(3) {
+    transform: translateY(calc(-1 * (var(--bar-gap) + var(--bar-height))))
+      rotate(-45deg);
+  }
+
+  /* the links become a dropdown panel under the nav */
+  .nav-loc {
+    position: absolute;
+    top: calc(100% + 1.2vw);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6vw;
+    padding: 1.8vw;
+    border: 0.12vw solid var(--border);
+    border-radius: 2.88vw;
+    background: var(--card-background);
+    box-shadow: 0 2.4vw 4.8vw -2.4vw rgba(0, 0, 0, 0.7);
+
+    opacity: 0;
+    visibility: hidden;
+    translate: 0 -1.8vw;
+    transition: opacity 0.25s, translate 0.25s ease, visibility 0s 0.25s;
+  }
+  .nav-open .nav-loc {
+    opacity: 1;
+    visibility: visible;
+    translate: 0 0;
+    transition: opacity 0.25s, translate 0.25s ease, visibility 0s;
+  }
+  .nav-loc a {
+    padding: 1.44vw 2.16vw;
+    border-radius: 1.92vw;
+    font-size: 2.16vw;
+  }
+  .nav-loc a.daftar {
+    margin-top: 0.6vw;
+    text-align: center;
+  }
+
+  /* ---------- hero ---------- */
+  .hero {
+    top: 8.4vw;
+    height: auto;
+    min-height: 85svh;
+    padding: 6vw var(--side-padding);
+    gap: 3.6vw;
+  }
+  .hero p {
+    width: 70vw;
+  }
+  .hero-btns {
+    gap: 1.92vw;
+  }
+  .whatsapp,
+  .secondary-btn {
+    border-radius: 4.8vw;
+  }
+  .whatsapp {
+    gap: 1.2vw;
+    padding: 1.68vw 3vw;
+    box-shadow: 0 0.48vw 0 var(--accent-button-shadow);
+  }
+  .whatsapp img {
+    width: 3.6vw;
+  }
+  .secondary-btn {
+    padding: 1.32vw 2.64vw;
+    border-width: 0.36vw;
+  }
+  .hero-line {
+    padding-bottom: 0.96vw;
+    margin-bottom: -0.96vw;
+  }
+
+  /* ---------- photo slideshow ---------- */
+  .photo-strip {
+    padding: 6vw 0 7.2vw;
+  }
+  .photo-track {
+    gap: 3.6vw;
+    padding-right: 3.6vw;
+  }
+  .photo-strip figure {
+    width: 42vw;
+    padding: 0.72vw 0.72vw 0;
+    border-radius: 1.92vw;
+  }
+  .photo-strip img {
+    border-radius: 1.2vw;
+  }
+  .photo-strip figcaption {
+    padding: 0.84vw 0.6vw 1.08vw;
+    font-size: 1.56vw;
+  }
+
+  /* ---------- why SRIWI ---------- */
+  .why {
+    --num-width: 4.8vw;
+    --row-gap: 2.4vw;
+    height: auto;
+  }
+  .why-inner {
+    position: static;
+    grid-template-columns: 1fr;
+    gap: 6vw;
+  }
+  .why-text {
+    padding-left: 0;
+  }
+  .why h2 {
+    margin-bottom: 3.6vw;
+  }
+  .why-item {
+    border-top-width: 0.24vw;
+  }
+  .why-item:last-child {
+    border-bottom-width: 0.24vw;
+  }
+  .why-item button {
+    padding: 2.16vw 0;
+  }
+  .why-num {
+    font-size: 1.56vw;
+  }
+  .why-title {
+    font-size: 3.36vw;
+  }
+  .why-arrow {
+    width: 4.8vw;
+  }
+  .why-body p {
+    max-width: none;
+    padding-bottom: 2.4vw;
+    font-size: 1.92vw;
+  }
+  .why-progress {
+    bottom: -0.24vw;
+    height: 0.24vw;
+  }
+  .why-photo {
+    order: -1;
+    max-width: 60vw;
+  }
+  .why-blob {
+    aspect-ratio: 1 / 1;
+  }
+  .why-ring {
+    border-width: 0.24vw;
+  }
+  .why-photo figcaption {
+    gap: 0.96vw;
+    margin-top: 1.92vw;
+    font-size: 1.68vw;
+  }
+  .why-photo figcaption::before {
+    width: 0.96vw;
+    height: 0.96vw;
+  }
+
+  /* ---------- registration steps ---------- */
+  .steps-line {
+    display: none;
+  }
+  .steps-wrap {
+    margin-top: 5vw;
+  }
+  .steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 6vw 4vw;
+  }
+  .step-circle {
+    width: 8.4vw;
+    margin-bottom: 1.92vw;
+    border-width: 0.36vw;
+    box-shadow: 0 0.6vw 0 color-mix(in srgb, var(--accent) 25%, transparent);
+    font-size: 3.6vw;
+  }
+  .steps-section:not(.is-animated) .step-circle,
+  .step.is-reached .step-circle {
+    box-shadow: 0 0.6vw 0 var(--accent-button-shadow);
+  }
+  .step h3 {
+    font-size: 2.64vw;
+  }
+  .step p {
+    max-width: 34vw;
+    margin-top: 0.96vw;
+    font-size: 1.8vw;
+  }
+  .steps-cta {
+    gap: 1.92vw;
+    margin-top: 6vw;
+  }
+
+  /* ---------- fees ---------- */
+  .fees-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4.8vw;
+  }
+  a.fees-doc {
+    margin-top: 1.92vw;
+    font-size: 1.92vw;
+    text-underline-offset: 0.48vw;
+  }
+  .fees-posters {
+    gap: 2.4vw;
+  }
+  .fees-poster {
+    width: 12vw;
+    padding: 0.6vw;
+    border-radius: 1.2vw;
+  }
+  .fees-poster img {
+    border-radius: 0.72vw;
+  }
+  .fees-poster-label {
+    max-width: 18vw;
+    font-size: 1.56vw;
+  }
+
+  /* tabs scroll sideways instead of wrapping */
+  .fees-tabs {
+    flex-wrap: nowrap;
+    gap: 1.2vw;
+    margin-top: 4.8vw;
+    padding-bottom: 0.6vw;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .fees-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .fees-tab {
+    flex: none;
+    padding: 1.2vw 2.16vw;
+    border-width: 0.24vw;
+    border-radius: 4.8vw;
+    font-size: 1.68vw;
+    white-space: nowrap;
+  }
+  .fees-tab-indicator {
+    border-radius: 4.8vw;
+    box-shadow: 0 0.48vw 0 var(--accent-button-shadow);
+  }
+
+  .fees-table-wrap {
+    margin-top: 2.4vw;
+    border-width: 0.24vw;
+    border-radius: 1.92vw;
+  }
+  .fees-table thead th {
+    padding: 1.44vw 1.92vw;
+    font-size: 1.56vw;
+  }
+  .fees-table td,
+  .fees-table tbody th {
+    padding: 1.68vw 1.92vw;
+    border-top-width: 0.12vw;
+    font-size: 1.8vw;
+  }
+  .fees-note,
+  .fees-footnote {
+    margin-top: 1.92vw;
+  }
+  .fees-note {
+    font-size: 1.68vw;
+  }
+  .fees-footnote {
+    max-width: none;
+    font-size: 1.56vw;
+  }
+
+  .poster-viewer img {
+    max-width: 92vw;
+    border-radius: 1.92vw;
+  }
+  .poster-close {
+    top: 1.8vw;
+    right: 1.8vw;
+    width: 6vw;
+    font-size: 3.36vw;
+  }
+
+  /* ---------- motto strip ---------- */
+  .motto-strip {
+    padding: 1.44vw 0;
+  }
+  .motto-track {
+    gap: 2.4vw;
+    padding-right: 2.4vw;
+  }
+  .motto-word {
+    font-size: 4.8vw;
+  }
+  .motto-star {
+    width: 3vw;
+  }
+
+  /* ---------- gallery ---------- */
+  .gallery-grid {
+    margin-top: 4.8vw;
+    columns: 2;
+    column-gap: 2.4vw;
+  }
+  .gallery-item {
+    margin-bottom: 2.4vw;
+  }
+  .gallery-open {
+    border-radius: 1.92vw;
+  }
+  .gallery-item figcaption {
+    margin-top: 1vw;
+    font-size: 1.56vw;
+  }
+
+  /* photo viewer: arrows move under the photo */
+  .gallery-viewer[open] {
+    gap: 0;
+  }
+  .gv-figure img {
+    max-width: 92vw;
+    max-height: 70vh;
+    border-radius: 1.92vw;
+  }
+  .gv-figure figcaption {
+    margin-top: 1.44vw;
+    font-size: 1.8vw;
+  }
+  .gv-close,
+  .gv-prev,
+  .gv-next {
+    width: 7.2vw;
+    font-size: 4.8vw;
+  }
+  .gv-close {
+    top: 3.6vw;
+    right: 3.6vw;
+  }
+  .gv-prev,
+  .gv-next {
+    position: absolute;
+    bottom: 4vw;
+  }
+  .gv-prev {
+    left: calc(50% - 9vw);
+  }
+  .gv-next {
+    right: calc(50% - 9vw);
+  }
+
+  /* ---------- services ---------- */
+  .services-grid,
+  .branches-grid {
+    margin-top: 4.8vw;
+    gap: 2.4vw;
+  }
+  .service-card {
+    gap: 1.92vw;
+    padding: 3.6vw;
+    border-width: 0.24vw;
+  }
+  .service-card:nth-child(4n + 1) {
+    border-radius: 2.88vw 2.88vw 2.88vw 0.96vw;
+  }
+  .service-card:nth-child(4n + 2) {
+    border-radius: 2.88vw 2.88vw 0.96vw 2.88vw;
+  }
+  .service-card:nth-child(4n + 3) {
+    border-radius: 0.96vw 2.88vw 2.88vw 2.88vw;
+  }
+  .service-card:nth-child(4n + 4) {
+    border-radius: 2.88vw 0.96vw 2.88vw 2.88vw;
+  }
+  .service-top {
+    gap: 1.92vw;
+  }
+  .service-icon {
+    width: 6.24vw;
+    border-radius: 1.92vw;
+  }
+  .service-icon svg,
+  .service-icon-text {
+    width: 3vw;
+    font-size: 3vw;
+  }
+  .service-icon-text {
+    width: 6.24vw;
+  }
+  .service-card h3 {
+    font-size: 2.64vw;
+  }
+  .service-tags {
+    gap: 0.72vw;
+    margin-top: 0.72vw;
+  }
+  .service-tags span {
+    padding: 0.6vw 1.2vw;
+    border-radius: 4.8vw;
+    font-size: 1.44vw;
+  }
+  .service-card p {
+    font-size: 1.8vw;
+  }
+
+  /* ---------- branches ---------- */
+  .branch {
+    border-width: 0.24vw;
+    border-radius: 2.88vw;
+  }
+  .branch-body {
+    gap: 1.44vw;
+    padding: 4.8vw 3vw 3vw;
+  }
+  .branch-pin {
+    top: -3vw;
+    left: 3vw;
+    width: 6vw;
+    box-shadow: 0 0.48vw 0 var(--accent-button-shadow);
+  }
+  .branch-pin svg {
+    width: 3vw;
+  }
+  .branch h3 {
+    font-size: 3.12vw;
+  }
+  .branch address {
+    font-size: 1.8vw;
+  }
+  .branch-actions {
+    gap: 1.2vw;
+    margin-top: 0.72vw;
+  }
+
+  /* ---------- pulsing rings ---------- */
+  .branch-pin::after,
+  .wa-float::after {
+    border-width: 0.36vw;
+  }
+
+  /* ---------- pill buttons ---------- */
+  a.service-btn,
+  a.branch-btn,
+  a.branch-btn.is-primary {
+    padding: 1.2vw 2.16vw;
+    border-radius: 4.8vw;
+    font-size: 1.68vw;
+  }
+  a.service-btn {
+    gap: 0.96vw;
+  }
+  .service-btn svg {
+    width: 2.16vw;
+  }
+  a.service-btn,
+  a.branch-btn.is-primary {
+    box-shadow: 0 0.48vw 0 var(--accent-button-shadow);
+  }
+  a.branch-btn {
+    border-width: 0.24vw;
+  }
+  a.closing-btn {
+    padding: 1.68vw 3.36vw;
+    border-width: 0.36vw;
+    border-radius: 4.8vw;
+    font-size: 2.04vw;
+  }
+  a.closing-btn.is-primary,
+  a.closing-btn.is-primary:hover {
+    box-shadow: 0 0.6vw 0 var(--dark-button-shadow);
+  }
+
+  /* ---------- closing ---------- */
+  .closing {
+    padding: 10vw var(--side-padding) 9vw;
+  }
+  .closing-inner {
+    max-width: none;
+  }
+  .closing-title {
+    letter-spacing: -0.24vw;
+  }
+  .closing-lede {
+    max-width: 60vw;
+    margin-top: 2.4vw;
+    font-size: 2.04vw;
+  }
+  .closing-actions {
+    gap: 1.92vw;
+    margin-top: 3.6vw;
+  }
+  .contact-list {
+    gap: 1.2vw;
+    margin-top: 4.8vw;
+  }
+  a.contact-chip {
+    gap: 0.36vw;
+    padding: 1.44vw 2.16vw;
+    border-radius: 1.92vw;
+  }
+  .contact-chip small {
+    font-size: 1.32vw;
+  }
+  .contact-chip strong {
+    font-size: 2.04vw;
+  }
+  .contact-chip.is-copied::after {
+    bottom: calc(100% + 0.96vw);
+    padding: 0.6vw 1.2vw;
+    border-radius: 0.96vw;
+    font-size: 1.44vw;
+  }
+
+  /* ---------- footer ---------- */
+  .site-footer {
+    padding: 4.8vw var(--side-padding) 2.88vw;
+  }
+  .footer-inner {
+    flex-direction: column;
+    gap: 2.4vw;
+    text-align: center;
+  }
+  .footer-brand {
+    gap: 1.2vw;
+    text-align: left;
+  }
+  .footer-brand img {
+    height: 5.28vw;
+  }
+  .footer-brand strong {
+    font-size: 2.64vw;
+  }
+  .footer-brand span {
+    font-size: 1.44vw;
+  }
+  .footer-branches {
+    font-size: 1.68vw;
+  }
+  .back-to-top {
+    padding: 1.2vw 2.16vw;
+    border-width: 0.24vw;
+    border-radius: 4.8vw;
+    font-size: 1.68vw;
+  }
+  .footer-copy {
+    margin-top: 3vw;
+    padding-top: 2.4vw;
+    border-top-width: 0.12vw;
+    font-size: 1.44vw;
+  }
+
+  /* ---------- floating WhatsApp button ---------- */
+  a.wa-float {
+    right: 2.4vw;
+    bottom: 2.4vw;
+    width: 7.2vw;
+    box-shadow: 0 1.2vw 2.4vw -0.96vw var(--whatsapp-shadow);
+  }
+  .wa-float svg {
+    width: 3.84vw;
+  }
+}
+
+/* ============================================================
+     9. PHONES (600px and narrower)
+     Sizes here are worked out on a 390px-wide phone:
+     1px = 0.256vw
+     ============================================================ */
+
+@media (max-width: 600px) {
+  /* ---------- variables ---------- */
+  :root {
+    --side-padding: 5.13vw; /* 20px */
+    --section-padding: 16vw; /* 62px */
+
+    --h1-size: 11vw; /* 43px */
+    --h2-size: 8.2vw; /* 32px */
+    --h3-size: 6.15vw; /* 24px */
+    --h4-size: 5.13vw; /* 20px */
+    --h5-size: 4.1vw; /* 16px */
+    --h6-size: 3.6vw; /* 14px */
+    --p-size: 4.1vw; /* 16px */
+    --closing-title-size: 13.3vw; /* 52px */
+
+    --bar-gap: 1.28vw;
+    --bar-height: 0.51vw;
+  }
+
+  /* ---------- base ---------- */
+  a {
+    padding: 2.56vw 4.1vw;
+    border-radius: 10vw;
+  }
+  a:focus-visible,
+  button:focus-visible,
+  [tabindex]:focus-visible {
+    outline-width: 0.77vw;
+    outline-offset: 0.77vw;
+  }
+
+  /* ---------- shared section parts ---------- */
+  .why-eyebrow,
+  .steps-eyebrow,
+  .fees-eyebrow,
+  .gallery-eyebrow,
+  .services-eyebrow,
+  .branches-eyebrow {
+    margin-bottom: 3.08vw;
+    font-size: 3.33vw;
+    letter-spacing: 0.38vw;
+  }
+  .steps-lede,
+  .fees-lede,
+  .gallery-lede,
+  .services-lede,
+  .branches-lede {
+    margin-top: 3.08vw;
+    max-width: none;
+    font-size: 4.1vw;
+  }
+  .wave {
+    height: 10vw;
+  }
+
+  /* ---------- navigation ---------- */
+  .nav {
+    top: 2.05vw;
+    left: 3.08vw;
+    right: 3.08vw;
+    padding: 2.05vw 2.05vw 2.05vw 4.1vw;
+    border-radius: 10vw;
+  }
+  .nav-logo {
+    gap: 2.56vw;
+  }
+  .nav-logo img {
+    height: 10.26vw;
+  }
+  .nav-logo-text h3 {
+    font-size: 5.13vw;
+  }
+  .nav-logo-text p {
+    font-size: 2.82vw;
+  }
+  .nav-toggle {
+    width: 11.28vw;
+  }
+  .nav-toggle span {
+    width: 5.13vw;
+  }
+  .nav-loc {
+    top: calc(100% + 2.05vw);
+    gap: 1.28vw;
+    padding: 3.6vw;
+    border-width: 0.26vw;
+    border-radius: 6.15vw;
+    translate: 0 -3.6vw;
+  }
+  .nav-loc a {
+    padding: 3.08vw 4.1vw;
+    border-radius: 4.1vw;
+    font-size: 4.36vw;
+  }
+  .nav-loc a.daftar {
+    margin-top: 1.28vw;
+  }
+
+  /* ---------- hero ---------- */
+  .hero {
+    top: 16.4vw;
+    min-height: 80svh;
+    padding: 10vw var(--side-padding);
+    gap: 6.15vw;
+  }
+  .hero p {
+    width: 88vw;
+  }
+  .hero-btns {
+    flex-direction: column;
+    align-self: stretch;
+    gap: 3.08vw;
+  }
+  .whatsapp,
+  .secondary-btn {
+    justify-content: center;
+    border-radius: 10vw;
+  }
+  .whatsapp {
+    gap: 2.56vw;
+    padding: 3.6vw 6.15vw;
+    box-shadow: 0 1.03vw 0 var(--accent-button-shadow);
+  }
+  .whatsapp img {
+    width: 7.7vw;
+  }
+  .secondary-btn {
+    padding: 3.08vw 6.15vw;
+    border-width: 0.77vw;
+  }
+  .hero-line {
+    padding-bottom: 2vw;
+    margin-bottom: -2vw;
+  }
+
+  /* ---------- photo slideshow ---------- */
+  .photo-strip {
+    padding: 10vw 0 12vw;
+  }
+  .photo-track {
+    gap: 5.13vw;
+    padding-right: 5.13vw;
+  }
+  .photo-strip figure {
+    width: 72vw;
+    padding: 1.54vw 1.54vw 0;
+    border-radius: 4.1vw;
+  }
+  .photo-strip img {
+    border-radius: 2.56vw;
+  }
+  .photo-strip figcaption {
+    padding: 1.8vw 1.3vw 2.3vw;
+    font-size: 3.33vw;
+  }
+
+  /* ---------- why SRIWI ---------- */
+  .why {
+    --num-width: 9vw;
+    --row-gap: 3.6vw;
+  }
+  .why-inner {
+    gap: 10vw;
+  }
+  .why h2 {
+    margin-bottom: 6.15vw;
+  }
+  .why-item {
+    border-top-width: 0.51vw;
+  }
+  .why-item:last-child {
+    border-bottom-width: 0.51vw;
+  }
+  .why-item button {
+    padding: 4.1vw 0;
+  }
+  .why-num {
+    font-size: 3.33vw;
+  }
+  .why-title {
+    font-size: 6.15vw;
+  }
+  .why-arrow {
+    width: 9.23vw;
+  }
+  .why-body p {
+    padding-bottom: 4.6vw;
+    font-size: 4.1vw;
+  }
+  .why-progress {
+    bottom: -0.51vw;
+    height: 0.51vw;
+  }
+  .why-photo {
+    max-width: 80vw;
+  }
+  .why-ring {
+    border-width: 0.51vw;
+  }
+  .why-photo figcaption {
+    gap: 2.05vw;
+    margin-top: 4.1vw;
+    font-size: 3.6vw;
+  }
+  .why-photo figcaption::before {
+    width: 2.05vw;
+    height: 2.05vw;
+  }
+
+  /* ---------- registration steps ---------- */
+  .steps-wrap {
+    margin-top: 10vw;
+  }
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 10vw;
+  }
+  .step-circle {
+    width: 16.4vw;
+    margin-bottom: 3.6vw;
+    border-width: 0.77vw;
+    box-shadow: 0 1.28vw 0 color-mix(in srgb, var(--accent) 25%, transparent);
+    font-size: 7.18vw;
+  }
+  .steps-section:not(.is-animated) .step-circle,
+  .step.is-reached .step-circle {
+    box-shadow: 0 1.28vw 0 var(--accent-button-shadow);
+  }
+  .step h3 {
+    font-size: 5.13vw;
+  }
+  .step p {
+    max-width: 75vw;
+    margin-top: 2vw;
+    font-size: 3.85vw;
+  }
+  .steps-cta {
+    flex-direction: column;
+    gap: 3.08vw;
+    margin-top: 10vw;
+  }
+
+  /* ---------- fees ---------- */
+  .fees-head {
+    gap: 8vw;
+  }
+  a.fees-doc {
+    margin-top: 4.1vw;
+    font-size: 4.1vw;
+    text-underline-offset: 1vw;
+  }
+  .fees-posters {
+    gap: 4.1vw;
+  }
+  .fees-poster {
+    width: 22vw;
+    padding: 1.28vw;
+    border-radius: 2.56vw;
+  }
+  .fees-poster img {
+    border-radius: 1.54vw;
+  }
+  .fees-poster-label {
+    max-width: 30vw;
+    font-size: 3.33vw;
+  }
+  .fees-tabs {
+    gap: 2.05vw;
+    margin-top: 8vw;
+    padding-bottom: 1.28vw;
+  }
+  .fees-tab {
+    padding: 2.56vw 4.1vw;
+    border-width: 0.51vw;
+    border-radius: 10vw;
+    font-size: 3.59vw;
+  }
+  .fees-tab-indicator {
+    border-radius: 10vw;
+    box-shadow: 0 1.03vw 0 var(--accent-button-shadow);
+  }
+  .fees-table-wrap {
+    margin-top: 4.1vw;
+    border-width: 0.51vw;
+    border-radius: 3.6vw;
+  }
+  .fees-table thead th {
+    padding: 3.08vw 4.1vw;
+    font-size: 3.33vw;
+  }
+  .fees-table td,
+  .fees-table tbody th {
+    padding: 3.6vw 4.1vw;
+    border-top-width: 0.26vw;
+    font-size: 3.85vw;
+  }
+  .fees-note,
+  .fees-footnote {
+    margin-top: 4.1vw;
+  }
+  .fees-note {
+    font-size: 3.6vw;
+  }
+  .fees-footnote {
+    font-size: 3.33vw;
+  }
+  .poster-viewer img {
+    border-radius: 3.08vw;
+  }
+  .poster-close {
+    top: 3.08vw;
+    right: 3.08vw;
+    width: 11.3vw;
+    font-size: 7.18vw;
+  }
+
+  /* ---------- motto strip ---------- */
+  .motto-strip {
+    padding: 3vw 0;
+  }
+  .motto-track {
+    gap: 4.1vw;
+    padding-right: 4.1vw;
+  }
+  .motto-word {
+    font-size: 8.2vw;
+  }
+  .motto-star {
+    width: 5.13vw;
+  }
+
+  /* ---------- gallery ---------- */
+  .gallery-grid {
+    margin-top: 8vw;
+    column-gap: 3.08vw;
+  }
+  .gallery-item {
+    margin-bottom: 3.08vw;
+  }
+  .gallery-open {
+    border-radius: 3.08vw;
+  }
+  .gallery-item figcaption {
+    margin-top: 2vw;
+    font-size: 3.33vw;
+  }
+  .gv-figure img {
+    border-radius: 3.08vw;
+  }
+  .gv-figure figcaption {
+    margin-top: 3.08vw;
+    padding-inline: 2vw;
+    font-size: 3.85vw;
+  }
+  .gv-close,
+  .gv-prev,
+  .gv-next {
+    width: 12.3vw;
+    font-size: 8.2vw;
+  }
+  .gv-close {
+    top: 5vw;
+    right: 5vw;
+  }
+  .gv-prev,
+  .gv-next {
+    bottom: 8vw;
+  }
+  .gv-prev {
+    left: calc(50% - 16vw);
+  }
+  .gv-next {
+    right: calc(50% - 16vw);
+  }
+
+  /* ---------- services + branches: one column ---------- */
+  .services-grid,
+  .branches-grid {
+    grid-template-columns: 1fr;
+    margin-top: 8vw;
+    gap: 4.1vw;
+  }
+  .service-card {
+    gap: 3.6vw;
+    padding: 6.15vw;
+    border-width: 0.51vw;
+  }
+  .service-card:nth-child(4n + 1) {
+    border-radius: 6.15vw 6.15vw 6.15vw 2vw;
+  }
+  .service-card:nth-child(4n + 2) {
+    border-radius: 6.15vw 6.15vw 2vw 6.15vw;
+  }
+  .service-card:nth-child(4n + 3) {
+    border-radius: 2vw 6.15vw 6.15vw 6.15vw;
+  }
+  .service-card:nth-child(4n + 4) {
+    border-radius: 6.15vw 2vw 6.15vw 6.15vw;
+  }
+  .service-top {
+    gap: 3.6vw;
+  }
+  .service-icon,
+  .service-icon-text {
+    width: 12.3vw;
+    border-radius: 3.6vw;
+  }
+  .service-icon svg {
+    width: 6.15vw;
+  }
+  .service-icon-text {
+    font-size: 6.15vw;
+  }
+  .service-card h3 {
+    font-size: 5.13vw;
+  }
+  .service-tags {
+    gap: 1.54vw;
+    margin-top: 1.54vw;
+  }
+  .service-tags span {
+    padding: 1.3vw 2.56vw;
+    border-radius: 10vw;
+    font-size: 3.08vw;
+  }
+  .service-card p {
+    font-size: 3.85vw;
+  }
+
+  .branch {
+    border-width: 0.51vw;
+    border-radius: 5.13vw;
+  }
+  .branch-body {
+    gap: 3.08vw;
+    padding: 9.2vw 5.13vw 5.13vw;
+  }
+  .branch-pin {
+    top: -6.15vw;
+    left: 5.13vw;
+    width: 12.3vw;
+    box-shadow: 0 1.03vw 0 var(--accent-button-shadow);
+  }
+  .branch-pin svg {
+    width: 6.15vw;
+  }
+  .branch h3 {
+    font-size: 6.67vw;
+  }
+  .branch address {
+    font-size: 3.85vw;
+  }
+  .branch-actions {
+    gap: 2.05vw;
+    margin-top: 1.54vw;
+  }
+
+  .branch-pin::after,
+  .wa-float::after {
+    border-width: 0.77vw;
+  }
+
+  /* ---------- pill buttons ---------- */
+  a.service-btn,
+  a.branch-btn,
+  a.branch-btn.is-primary {
+    padding: 2.56vw 4.1vw;
+    border-radius: 10vw;
+    font-size: 3.59vw;
+  }
+  a.service-btn {
+    gap: 2.05vw;
+  }
+  .service-btn svg {
+    width: 4.36vw;
+  }
+  a.service-btn,
+  a.branch-btn.is-primary {
+    box-shadow: 0 1.03vw 0 var(--accent-button-shadow);
+  }
+  a.branch-btn {
+    border-width: 0.51vw;
+  }
+  a.closing-btn {
+    justify-content: center;
+    padding: 3.6vw 6.15vw;
+    border-width: 0.77vw;
+    border-radius: 10vw;
+    font-size: 4.1vw;
+  }
+  a.closing-btn.is-primary,
+  a.closing-btn.is-primary:hover {
+    box-shadow: 0 1.28vw 0 var(--dark-button-shadow);
+  }
+
+  /* ---------- closing ---------- */
+  .closing {
+    padding: 18vw var(--side-padding) 16vw;
+  }
+  .closing-title {
+    letter-spacing: -0.51vw;
+  }
+  .closing-lede {
+    max-width: none;
+    margin-top: 4.6vw;
+    font-size: 4.1vw;
+  }
+  .closing-actions {
+    flex-direction: column;
+    gap: 3.08vw;
+    margin-top: 6.15vw;
+  }
+  .contact-list {
+    gap: 2.05vw;
+    margin-top: 8.2vw;
+  }
+  a.contact-chip {
+    gap: 0.77vw;
+    padding: 3.08vw 4.1vw;
+    border-radius: 3.6vw;
+  }
+  .contact-list li:last-child {
+    flex-basis: 100%; /* email gets its own full row */
+  }
+  .contact-list li:last-child a.contact-chip {
+    align-items: center;
+  }
+  .contact-chip small {
+    font-size: 2.82vw;
+  }
+  .contact-chip strong {
+    font-size: 4.36vw;
+  }
+  .contact-chip.is-copied::after {
+    bottom: calc(100% + 2.05vw);
+    padding: 1.28vw 2.56vw;
+    border-radius: 2.05vw;
+    font-size: 3.08vw;
+  }
+
+  /* ---------- footer ---------- */
+  .site-footer {
+    padding: 10vw var(--side-padding) 6vw;
+  }
+  .footer-inner {
+    gap: 5vw;
+  }
+  .footer-brand {
+    gap: 2.56vw;
+  }
+  .footer-brand img {
+    height: 10.26vw;
+  }
+  .footer-brand strong {
+    font-size: 5.13vw;
+  }
+  .footer-brand span {
+    font-size: 3.08vw;
+  }
+  .footer-branches {
+    font-size: 3.59vw;
+  }
+  .back-to-top {
+    padding: 2.56vw 4.6vw;
+    border-width: 0.51vw;
+    border-radius: 10vw;
+    font-size: 3.59vw;
+  }
+  .footer-copy {
+    margin-top: 6vw;
+    padding-top: 4.1vw;
+    border-top-width: 0.26vw;
+    font-size: 3.08vw;
+  }
+
+  /* ---------- floating WhatsApp button ---------- */
+  a.wa-float {
+    right: 4.1vw;
+    bottom: 4.1vw;
+    width: 14.36vw;
+    box-shadow: 0 2.56vw 5.13vw -2.05vw var(--whatsapp-shadow);
+  }
+  .wa-float svg {
+    width: 7.7vw;
+  }
+}
+/* nothing may stick out sideways and make the page swipeable */
+html,
+body {
+  overflow-x: clip;
+}
+
+/* the spinning ring behind the "why" photo */
+.why {
+  overflow-x: clip;
 }
