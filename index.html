@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sriwi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Figtree:wght@400;500;600;700&family=Reem+Kufi:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      document.documentElement.classList.add("hero-loading");
+      setTimeout(
+        () => document.documentElement.classList.remove("hero-loading"),
+        3000
+      );
+    </script>
+  </head>
+  <body>
+    <!-- your page content goes here -->
+    <div class="nav">
+      <div class="nav-logo">
+        <img src="srcs/logosriwi.png" alt="" />
+        <div class="nav-logo-text">
+          <h3>SRIWI</h3>
+          <p>
+            Sekolah Rendah Islam <br />
+            Wardatul Imtiyaz
+          </p>
+        </div>
+      </div>
+      <div class="nav-loc">
+        <a href="#why">Tentang</a>
+        <a href="#daftar">Pendaftaran</a>
+        <a href="#yuran">Yuran</a>
+        <a href="#galeri">Galeri</a>
+        <a href="#perkhidmatan">Perkhidmatan</a>
+        <a href="#cawangan">Cawangan</a>
+        <a
+          href="https://forms.gle/MQ5MyXsMG1xwdpBZ9"
+          target="_blank"
+          rel="noopener"
+          class="daftar"
+          >Daftar</a
+        >
+      </div>
+    </div>
+    <section class="hero">
+      <h3 class="arab">مدرسة وردة الامتياز</h3>
+      <h1>Sekolah Rendah <br />Islam Wardatul <br />Imtiyaaz</h1>
+      <p>
+        Sekolah Rendah Islam Wardatul Imtiyaaz di Bandar Puncak Alam dan Bandar
+        Seri Coalfields. Kurikulum sekolah rendah dan pendidikan Islam, diajar
+        bersama dari Darjah 1 hingga 6.
+      </p>
+      <div class="hero-btns">
+        <a
+          href="https://forms.gle/MQ5MyXsMG1xwdpBZ9"
+          target="_blank"
+          rel="noopener"
+          class="whatsapp"
+          ><img src="srcs/memo.png" alt="" /> Daftar Ke SRIWI</a
+        >
+        <a href="" class="secondary-btn">Lihat Yuran 2027</a>
+      </div>
+    </section>
+    <section class="slide-show">
+      <div
+        class="photo-strip"
+        id="photo-strip"
+        aria-label="Gambar aktiviti murid"
+      >
+        <div class="photo-track" id="photo-track"></div>
+      </div>
+    </section>
+    <!-- wave: page → green -->
+    <svg
+      class="wave wave-top"
+      viewBox="0 0 1440 80"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M0,48 C180,78 360,8 600,30 C840,52 1020,86 1220,52 C1320,35 1390,28 1440,30 L1440,80 L0,80 Z"
+      />
+    </svg>
+
+    <section class="why" id="why">
+      <div class="why-inner">
+        <div class="why-text">
+          <p class="why-eyebrow">Tentang SRIWI</p>
+          <h2>Kenapa ibu bapa memilih SRIWI</h2>
+
+          <ul class="why-list">
+            <li
+              class="why-item is-active"
+              data-photo="images/suasana-dalam-kelas.jpg"
+              data-caption="Suasana dalam kelas"
+            >
+              <h3>
+                <button
+                  type="button"
+                  aria-expanded="true"
+                  aria-controls="why-1"
+                >
+                  <span class="why-num">01</span>
+                  <span class="why-title">Akademik &amp; Islam bersepadu</span>
+                  <span class="why-arrow" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="why-body" id="why-1">
+                <p>
+                  Subjek teras sekolah rendah diajar bersama Pendidikan Islam,
+                  Bahasa Arab dan Jawi.
+                </p>
+              </div>
+              <span class="why-progress" aria-hidden="true"></span>
+            </li>
+
+            <li
+              class="why-item"
+              data-photo="images/bacaan-bersama-di-surau.jpg"
+              data-caption="Bacaan bersama di surau"
+            >
+              <h3>
+                <button
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="why-2"
+                >
+                  <span class="why-num">02</span>
+                  <span class="why-title">Al-Quran setiap hari</span>
+                  <span class="why-arrow" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="why-body" id="why-2">
+                <p>
+                  Bacaan, tajwid dan hafazan surah pilihan mengikut tahap murid.
+                </p>
+              </div>
+              <span class="why-progress" aria-hidden="true"></span>
+            </li>
+
+            <li
+              class="why-item"
+              data-photo="images/majlis-ilmu-dan-doa-bersama.jpg"
+              data-caption="Majlis ilmu dan doa bersama"
+            >
+              <h3>
+                <button
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="why-3"
+                >
+                  <span class="why-num">03</span>
+                  <span class="why-title">Adab &amp; sahsiah</span>
+                  <span class="why-arrow" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="why-body" id="why-3">
+                <p>
+                  Solat berjemaah, doa harian dan amalan adab dibimbing sejak
+                  awal.
+                </p>
+              </div>
+              <span class="why-progress" aria-hidden="true"></span>
+            </li>
+
+            <li
+              class="why-item"
+              data-photo="images/penyampaian-sijil-upkk-2025.jpg"
+              data-caption="Penyampaian sijil UPKK 2025"
+            >
+              <h3>
+                <button
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="why-4"
+                >
+                  <span class="why-num">04</span>
+                  <span class="why-title">Kelas bersaiz kecil</span>
+                  <span class="why-arrow" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="why-body" id="why-4">
+                <p>
+                  Guru dapat memberi perhatian dan memantau perkembangan setiap
+                  anak.
+                </p>
+              </div>
+              <span class="why-progress" aria-hidden="true"></span>
+            </li>
+          </ul>
+        </div>
+
+        <figure class="why-photo">
+          <span class="why-ring" aria-hidden="true"></span>
+          <div class="why-blob">
+            <img
+              src="images/suasana-dalam-kelas.jpg"
+              alt="Suasana dalam kelas"
+            />
+          </div>
+          <figcaption>Suasana dalam kelas</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <svg
+      class="wave wave-why-to-steps"
+      viewBox="0 0 1440 80"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M0,30 C200,6 420,70 720,46 C1000,24 1180,10 1440,44 L1440,80 L0,80 Z"
+      />
+    </svg>
+    <section class="steps-section" id="daftar">
+      <div class="steps-inner">
+        <p class="steps-eyebrow">Pendaftaran 2027</p>
+        <h2>Empat langkah untuk mendaftar</h2>
+        <p class="steps-lede">
+          Hari pendaftaran rasmi pada 15 Oktober. Ibu bapa boleh mendaftar
+          secara dalam talian melalui borang pendaftaran.
+        </p>
+
+        <div class="steps-wrap">
+          <!-- dotted path -->
+          <svg
+            class="steps-line steps-line-base"
+            viewBox="0 0 1000 60"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M0,30 C120,-10 230,70 333,30 C440,-10 560,70 666,30 C770,-10 880,70 1000,30"
+            />
+          </svg>
+          <!-- lime line that fills as you scroll -->
+          <svg
+            class="steps-line steps-line-fill"
+            viewBox="0 0 1000 60"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M0,30 C120,-10 230,70 333,30 C440,-10 560,70 666,30 C770,-10 880,70 1000,30"
+            />
+          </svg>
+
+          <ol class="steps">
+            <li class="step">
+              <span class="step-circle">1</span>
+              <h3>Isi borang</h3>
+              <p>
+                Lengkapkan borang pendaftaran dalam talian dengan maklumat murid
+                dan ibu bapa.
+              </p>
+            </li>
+            <li class="step">
+              <span class="step-circle">2</span>
+              <h3>Tunggu panggilan</h3>
+              <p>
+                Staf SRIWI akan menghubungi anda untuk mengesahkan tempat dan
+                memberi maklumat lanjut.
+              </p>
+            </li>
+            <li class="step">
+              <span class="step-circle">3</span>
+              <h3>Bayar yuran</h3>
+              <p>
+                Bayar secara dalam talian (perbankan internet atau QR) dan
+                hantar bukti bayaran.
+              </p>
+            </li>
+            <li class="step">
+              <span class="step-circle">4</span>
+              <h3>Terima resit rasmi</h3>
+              <p>
+                Pihak sekolah akan menghantar resit rasmi sebagai pengesahan
+                pendaftaran.
+              </p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="steps-cta">
+          <a
+            class="whatsapp"
+            href="https://forms.gle/MQ5MyXsMG1xwdpBZ9"
+            target="_blank"
+            rel="noopener"
+          >
+            <img src="srcs/memo.png" alt="" /> Daftar ke SRIWI
+          </a>
+          <a class="secondary-btn" href="#yuran">Lihat Yuran 2027</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- wave: steps → page -->
+    <svg
+      class="wave wave-steps-to-page"
+      viewBox="0 0 1440 80"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M0,48 C180,78 360,8 600,30 C840,52 1020,86 1220,52 C1320,35 1390,28 1440,30 L1440,80 L0,80 Z"
+      />
+    </svg>
+    <section class="fees" id="yuran">
+      <div class="fees-inner">
+        <div class="fees-head">
+          <div class="fees-intro">
+            <p class="fees-eyebrow">Yuran</p>
+            <h2>Yuran 2027</h2>
+            <p class="fees-lede">
+              Amaun dalam Ringgit Malaysia (RM) mengikut darjah. Pilih jenis
+              bayaran.
+            </p>
+            <a
+              class="fees-doc"
+              href="https://drive.google.com/drive/folders/1RwtVpNJuYaJMX4FH5FNro_BEQbWCCawE?usp=drive_link"
+              target="_blank"
+              rel="noopener"
+              >Lihat dokumen pendaftaran sesi 2027</a
+            >
+          </div>
+
+          <div class="fees-posters">
+            <button
+              type="button"
+              class="fees-poster"
+              data-full="images/poster-yuran-2027.jpg"
+            >
+              <img
+                src="images/poster-yuran-2027.jpg"
+                alt="Senarai bayaran yuran persekolahan 2027"
+              />
+            </button>
+            <button
+              type="button"
+              class="fees-poster"
+              data-full="images/poster-kedai-sekolah-2027.jpg"
+            >
+              <img
+                src="images/poster-kedai-sekolah-2027.jpg"
+                alt="Senarai keperluan kedai sekolah 2027"
+              />
+            </button>
+            <p class="fees-poster-label">Poster rasmi, tekan untuk besarkan</p>
+          </div>
+        </div>
+
+        <!-- tabs are added by script.js -->
+        <div class="fees-tabs" role="tablist" aria-label="Jenis bayaran">
+          <span class="fees-tab-indicator" aria-hidden="true"></span>
+        </div>
+
+        <div
+          class="fees-table-wrap"
+          id="fees-panel"
+          role="tabpanel"
+          tabindex="0"
+        >
+          <table class="fees-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <p class="fees-note" id="fees-note"></p>
+        <p class="fees-footnote">
+          Harga tertakluk kepada perubahan dari semasa ke semasa. Sila rujuk
+          pihak sekolah bagi sebarang pertanyaan.
+        </p>
+      </div>
+    </section>
+
+    <!-- big poster viewer -->
+    <dialog class="poster-viewer" id="poster-viewer">
+      <button type="button" class="poster-close" aria-label="Tutup">×</button>
+      <img alt="" />
+    </dialog>
+
+    <!-- motto strip -->
+    <div class="motto-strip" aria-hidden="true">
+      <div class="motto-track"></div>
+    </div>
+
+    <!-- gallery -->
+    <section class="gallery" id="galeri">
+      <div class="gallery-inner">
+        <p class="gallery-eyebrow">Galeri</p>
+        <h2>Hari-hari di SRIWI</h2>
+        <p class="gallery-lede">
+          Majlis, kelas dan program murid sepanjang tahun. Tekan gambar untuk
+          melihat dalam saiz penuh.
+        </p>
+        <!-- photos are added by script.js -->
+        <div class="gallery-grid"></div>
+      </div>
+    </section>
+
+    <!-- big photo viewer -->
+    <dialog
+      class="gallery-viewer"
+      id="gallery-viewer"
+      aria-label="Galeri gambar"
+    >
+      <button type="button" class="gv-close" aria-label="Tutup">×</button>
+      <button type="button" class="gv-prev" aria-label="Gambar sebelum">
+        ‹
+      </button>
+      <figure class="gv-figure">
+        <img alt="" />
+        <figcaption>
+          <span class="gv-caption"></span>
+          <span class="gv-count"></span>
+        </figcaption>
+      </figure>
+      <button type="button" class="gv-next" aria-label="Gambar seterusnya">
+        ›
+      </button>
+    </dialog>
+
+    <!-- wave: page → services -->
+    <svg
+      class="wave wave-page-to-highlight"
+      viewBox="0 0 1440 80"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M0,50 Q60,10 120,50 T240,50 T360,50 T480,50 T600,50 T720,50 T840,50 T960,50 T1080,50 T1200,50 T1320,50 T1440,50 L1440,80 L0,80 Z"
+      />
+    </svg>
+
+    <section class="services" id="perkhidmatan">
+      <div class="services-inner">
+        <p class="services-eyebrow">Perkhidmatan</p>
+        <h2>Perkhidmatan tambahan</h2>
+        <p class="services-lede">
+          Sokongan selepas waktu sekolah untuk murid dan keluarga.
+        </p>
+
+        <ul class="services-grid">
+          <li class="service-card">
+            <div class="service-top">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="4" y="3" width="16" height="14" rx="3" />
+                  <path d="M4 10h16M8 17v3M16 17v3" />
+                  <circle cx="8" cy="13.5" r="0.6" />
+                  <circle cx="16" cy="13.5" r="0.6" />
+                </svg>
+              </span>
+              <div>
+                <h3>Transit &amp; pengangkutan</h3>
+                <div class="service-tags"><span>Fizikal</span></div>
+              </div>
+            </div>
+            <p>
+              Penjagaan murid selepas waktu sekolah dan perkhidmatan
+              pengangkutan untuk murid.
+            </p>
+            <a
+              class="service-btn"
+              target="_blank"
+              rel="noopener"
+              href="https://wa.me/60193481060?text=Assalamualaikum%2C%20saya%20ingin%20bertanya%20tentang%20Transit%20%26%20pengangkutan."
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"
+                />
+              </svg>
+              Tanya melalui WhatsApp
+            </a>
+          </li>
+
+          <li class="service-card">
+            <div class="service-top">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M2 5h6a4 4 0 0 1 4 4v11a3 3 0 0 0-3-3H2zM22 5h-6a4 4 0 0 0-4 4v11a3 3 0 0 1 3-3h7z"
+                  />
+                </svg>
+              </span>
+              <div>
+                <h3>Kelas mengaji 1-to-1</h3>
+                <div class="service-tags">
+                  <span>Online</span><span>Fizikal</span>
+                </div>
+              </div>
+            </div>
+            <p>
+              Bimbingan membaca Al-Quran seorang guru dengan seorang murid,
+              mengikut tahap dan kelajuan anak.
+            </p>
+            <a
+              class="service-btn"
+              target="_blank"
+              rel="noopener"
+              href="https://wa.me/60193481060?text=Assalamualaikum%2C%20saya%20ingin%20bertanya%20tentang%20Kelas%20mengaji%201-to-1."
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"
+                />
+              </svg>
+              Tanya melalui WhatsApp
+            </a>
+          </li>
+
+          <li class="service-card">
+            <div class="service-top">
+              <span class="service-icon service-icon-text" aria-hidden="true"
+                >ج</span
+              >
+              <div>
+                <h3>Kelas membaca Jawi</h3>
+                <div class="service-tags">
+                  <span>Online</span><span>Fizikal</span>
+                </div>
+              </div>
+            </div>
+            <p>
+              Kelas asas membaca dan mengeja Jawi untuk murid sekolah rendah.
+            </p>
+            <a
+              class="service-btn"
+              target="_blank"
+              rel="noopener"
+              href="https://wa.me/60193481060?text=Assalamualaikum%2C%20saya%20ingin%20bertanya%20tentang%20Kelas%20membaca%20Jawi."
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"
+                />
+              </svg>
+              Tanya melalui WhatsApp
+            </a>
+          </li>
+
+          <li class="service-card">
+            <div class="service-top">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="4" y="4" width="16" height="11" rx="1.5" />
+                  <path d="M2 19h20" />
+                </svg>
+              </span>
+              <div>
+                <h3>Kelas KAFA online</h3>
+                <div class="service-tags"><span>Online</span></div>
+              </div>
+            </div>
+            <p>Ikuti pembelajaran KAFA secara dalam talian dari rumah.</p>
+            <a
+              class="service-btn"
+              target="_blank"
+              rel="noopener"
+              href="https://wa.me/60193481060?text=Assalamualaikum%2C%20saya%20ingin%20bertanya%20tentang%20Kelas%20KAFA%20online."
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"
+                />
+              </svg>
+              Tanya melalui WhatsApp
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- wave: services → green (branches) -->
+    <svg
+      class="wave wave-highlight-to-green"
+      viewBox="0 0 1440 80"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M0,48 C180,78 360,8 600,30 C840,52 1020,86 1220,52 C1320,35 1390,28 1440,30 L1440,80 L0,80 Z"
+      />
+    </svg>
+
+    <section class="branches" id="cawangan">
+      <div class="branches-inner">
+        <p class="branches-eyebrow">Cawangan</p>
+        <h2>Datang melawat</h2>
+        <p class="branches-lede">
+          Dua cawangan di Selangor. Hubungi cawangan dahulu untuk temujanji
+          lawatan.
+        </p>
+
+        <div class="branches-grid">
+          <!-- Bandar Puncak Alam -->
+          <article class="branch">
+            <div class="branch-map">
+              <iframe
+                title="Peta SRIWI Bandar Puncak Alam"
+                src="https://maps.google.com/maps?q=Suria%20Square%2C%20Jalan%20Dataran%20Suria%2015%2F8%2F3%2C%2042300%20Bandar%20Puncak%20Alam%2C%20Selangor&z=16&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div class="branch-body">
+              <span class="branch-pin" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"
+                  />
+                </svg>
+              </span>
+              <h3>Bandar Puncak Alam</h3>
+              <address>
+                No. 41-1 Jln Dataran Suria 15/8/3,<br />
+                Suria Square,<br />
+                42300 Bandar Puncak Alam, Selangor
+              </address>
+              <div class="branch-actions">
+                <a
+                  class="branch-btn is-primary"
+                  href="https://share.google/ZzNmSFfVbP2IsAIkL"
+                  target="_blank"
+                  rel="noopener"
+                  >Google Maps</a
+                >
+                <a
+                  class="branch-btn"
+                  href="https://waze.com/ul?q=Suria%20Square%20Bandar%20Puncak%20Alam&navigate=yes"
+                  target="_blank"
+                  rel="noopener"
+                  >Waze</a
+                >
+                <a
+                  class="branch-btn"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://wa.me/60193481060?text=Assalamualaikum%2C%20saya%20ingin%20membuat%20temujanji%20lawatan%20ke%20SRIWI%20cawangan%20Bandar%20Puncak%20Alam."
+                  >Tempah lawatan</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Bandar Seri Coalfields -->
+          <article class="branch">
+            <div class="branch-map">
+              <iframe
+                title="Peta SRIWI Bandar Seri Coalfields"
+                src="https://maps.google.com/maps?q=50%20Jalan%20BSC%202B%2F2%2C%20Bandar%20Seri%20Coalfields%2C%2047000%20Sungai%20Buloh%2C%20Selangor&z=16&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div class="branch-body">
+              <span class="branch-pin" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"
+                  />
+                </svg>
+              </span>
+              <h3>Bandar Seri Coalfields</h3>
+              <address>
+                No. 50 Jalan BSC 2B/2,<br />
+                Bandar Seri Coalfields,<br />
+                47000 Sungai Buloh, Selangor
+              </address>
+              <div class="branch-actions">
+                <a
+                  class="branch-btn is-primary"
+                  href="https://www.google.com/maps/search/?api=1&query=50%20Jalan%20BSC%202B%2F2%2C%20Bandar%20Seri%20Coalfields%2C%20Sungai%20Buloh"
+                  target="_blank"
+                  rel="noopener"
+                  >Google Maps</a
+                >
+                <a
+                  class="branch-btn"
+                  href="https://waze.com/ul/hw284mp54u"
+                  target="_blank"
+                  rel="noopener"
+                  >Waze</a
+                >
+                <a
+                  class="branch-btn"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://wa.me/60193481060?text=Assalamualaikum%2C%20saya%20ingin%20membuat%20temujanji%20lawatan%20ke%20SRIWI%20cawangan%20Bandar%20Seri%20Coalfields."
+                  >Tempah lawatan</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- wave: green → lime (closing section) -->
+    <svg
+      class="wave wave-green-to-accent"
+      viewBox="0 0 1440 80"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M0,30 C200,6 420,70 720,46 C1000,24 1180,10 1440,44 L1440,80 L0,80 Z"
+      />
+    </svg>
+
+    <section class="closing" id="hubungi-kami">
+      <div class="closing-inner">
+        <h2 class="closing-title">
+          <span>Daftar</span> <span>untuk</span> <span>sesi</span>
+          <span class="closing-year">2027</span>
+        </h2>
+        <p class="closing-lede">
+          Tempat adalah terhad. Isi borang pendaftaran, atau hubungi kami untuk
+          bertanya dan datang melawat sekolah.
+        </p>
+
+        <div class="closing-actions">
+          <a
+            class="closing-btn is-primary"
+            href="https://forms.gle/MQ5MyXsMG1xwdpBZ9"
+            target="_blank"
+            rel="noopener"
+            >Daftar ke SRIWI</a
+          >
+          <a
+            class="closing-btn"
+            target="_blank"
+            rel="noopener"
+            href="https://wa.me/60193481060?text=Assalamualaikum%2C%20saya%20ingin%20membuat%20temujanji%20lawatan%20ke%20SRIWI."
+            >Tempah lawatan sekolah</a
+          >
+        </div>
+
+        <ul class="contact-list">
+          <li>
+            <a
+              class="contact-chip"
+              href="tel:+60367403159"
+              data-copy="03-6740 3159"
+              ><small>Pejabat</small><strong>03-6740 3159</strong></a
+            >
+          </li>
+          <li>
+            <a
+              class="contact-chip"
+              href="tel:+60133086494"
+              data-copy="013-308 6494"
+              ><small>Telefon</small><strong>013-308 6494</strong></a
+            >
+          </li>
+          <li>
+            <a
+              class="contact-chip"
+              href="tel:+60182694564"
+              data-copy="018-269 4564"
+              ><small>Telefon</small><strong>018-269 4564</strong></a
+            >
+          </li>
+          <li>
+            <a
+              class="contact-chip"
+              href="tel:+601113383715"
+              data-copy="011-1338 3715"
+              ><small>Telefon</small><strong>011-1338 3715</strong></a
+            >
+          </li>
+          <li>
+            <a
+              class="contact-chip"
+              href="tel:+60193481060"
+              data-copy="019-348 1060"
+              ><small>Telefon</small><strong>019-348 1060</strong></a
+            >
+          </li>
+          <li>
+            <a
+              class="contact-chip"
+              href="mailto:sriwardatulimtiyaaz@gmail.com"
+              data-copy="sriwardatulimtiyaaz@gmail.com"
+              ><small>E-mel</small
+              ><strong>sriwardatulimtiyaaz@gmail.com</strong></a
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- wave: lime → footer -->
+    <svg
+      class="wave wave-accent-to-green"
+      viewBox="0 0 1440 80"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M0,50 Q60,10 120,50 T240,50 T360,50 T480,50 T600,50 T720,50 T840,50 T960,50 T1080,50 T1200,50 T1320,50 T1440,50 L1440,80 L0,80 Z"
+      />
+    </svg>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="srcs/logosriwi.png" alt="" />
+          <div>
+            <strong>SRIWI</strong>
+            <span>Sekolah Rendah Islam Wardatul Imtiyaaz</span>
+          </div>
+        </div>
+        <p class="footer-branches">
+          Bandar Puncak Alam · Bandar Seri Coalfields
+        </p>
+        <button type="button" class="back-to-top">Kembali ke atas ↑</button>
+      </div>
+      <p class="footer-copy">
+        © <span id="year">2026</span> Sekolah Rendah Islam Wardatul Imtiyaaz.
+        Hak cipta terpelihara.
+      </p>
+    </footer>
+
+    <!-- floating WhatsApp button -->
+    <a
+      class="wa-float"
+      target="_blank"
+      rel="noopener"
+      aria-label="WhatsApp SRIWI"
+      href="https://wa.me/60193481060?text=Assalamualaikum%2C%20saya%20ingin%20bertanya%20tentang%20SRIWI."
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3Z"
+        />
+      </svg>
+    </a>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <!-- smooth scrolling -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+
+    <!-- your animations -->
+    <script src="script.js"></script>
+  </body>
+</html>
