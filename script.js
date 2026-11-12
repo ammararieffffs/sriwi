@@ -255,7 +255,7 @@ if (stepsSection) {
 
   mm.add(
     {
-      desktop: "(min-width: 861px)",
+      desktop: "(min-width: 1025px)",
       motionOK: "(prefers-reduced-motion: no-preference)"
     },
     context => {
@@ -958,3 +958,24 @@ if (hero) {
        }).observe(dialog, { attributes: true, attributeFilter: ["open"] });
      });
    }
+   /* ============================================================
+   MENU BUTTON (tablets and phones)
+   ============================================================ */
+
+const nav = document.querySelector(".nav");
+const navToggle = document.querySelector(".nav-toggle");
+
+if (nav && navToggle) {
+  const setMenu = open => {
+    nav.classList.toggle("nav-open", open);
+    navToggle.setAttribute("aria-expanded", open);
+    navToggle.setAttribute("aria-label", open ? "Tutup menu" : "Buka menu");
+  };
+
+  navToggle.addEventListener("click", () => setMenu(!nav.classList.contains("nav-open")));
+
+  // close after choosing a link, tapping outside, or pressing Esc
+  nav.querySelectorAll(".nav-loc a").forEach(link => link.addEventListener("click", () => setMenu(false)));
+  document.addEventListener("click", e => { if (!nav.contains(e.target)) setMenu(false); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") setMenu(false); });
+}
