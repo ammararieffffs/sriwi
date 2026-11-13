@@ -979,3 +979,23 @@ if (nav && navToggle) {
   document.addEventListener("click", e => { if (!nav.contains(e.target)) setMenu(false); });
   document.addEventListener("keydown", e => { if (e.key === "Escape") setMenu(false); });
 }
+  document.getElementById("download-fees").addEventListener("click", (e) => {
+    e.preventDefault();
+
+alert("Sedang memuat turun dokumen pendaftaran");
+
+    const files = [
+      "images/poster-kedai-sekolah-2027.jpg",
+      "images/poster-yuran-2027.jpg"
+    ];
+
+    files.forEach((file) => {
+      const link = document.createElement("a");
+      link.href = file;
+      link.download = file.split("/").pop();
+
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    });
+  });
