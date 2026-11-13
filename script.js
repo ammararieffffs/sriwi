@@ -985,9 +985,7 @@ if (nav && navToggle) {
 alert("Sedang memuat turun dokumen pendaftaran");
 
     const files = [
-      "images/poster-kedai-sekolah-2027.jpg",
-      "images/poster-yuran-2027.jpg"
-    ];
+      "images/dokumen-pendaftaran-sriwi-2027.pdf"    ];
 
     files.forEach((file) => {
       const link = document.createElement("a");
