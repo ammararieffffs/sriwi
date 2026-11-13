@@ -979,21 +979,20 @@ if (nav && navToggle) {
   document.addEventListener("click", e => { if (!nav.contains(e.target)) setMenu(false); });
   document.addEventListener("keydown", e => { if (e.key === "Escape") setMenu(false); });
 }
-  document.getElementById("download-fees").addEventListener("click", (e) => {
+document.querySelectorAll(".download-fees").forEach((button) => {
+  button.addEventListener("click", (e) => {
     e.preventDefault();
 
-alert("Sedang memuat turun dokumen pendaftaran");
+    alert("Sedang memuat turun dokumen pendaftaran");
 
-    const files = [
-      "images/dokumen-pendaftaran-sriwi-2027.pdf"    ];
+    const file = "images/dokumen-pendaftaran-sriwi-2027.pdf";
 
-    files.forEach((file) => {
-      const link = document.createElement("a");
-      link.href = file;
-      link.download = file.split("/").pop();
+    const link = document.createElement("a");
+    link.href = file;
+    link.download = file.split("/").pop();
 
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-    });
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
   });
+});
